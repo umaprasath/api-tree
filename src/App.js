@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CollapsibleTreeWithAction from './CollapsibleTreeWithAction'
 
-function App() {
+function App () {
+  const data = {
+    name: 'Consumers',
+    children: [
+      {
+        name: 'Consumer 1',
+        children: [
+          {
+            name: 'APP 1',
+            children: [
+              { name: 'APP 1.1' },
+              { name: 'APP 1.2' }]
+          },
+          {
+            name: 'APP 2',
+            children: [
+              { name: 'APP 1.1' },
+              { name: 'APP 1.2' }]
+          }
+        ]
+      },
+      {
+        name: 'Consumer 2',
+        children: [
+          {
+            name: 'APP 1',
+            children: [
+              { name: 'APP 2' },
+              { name: 'APP 1.2' }]
+          },
+          {
+            name: 'APP 2',
+            children: [
+              { name: 'APP 1.1' },
+              { name: 'APP 1.2' }]
+          }
+        ]
+      },
+      {
+        name: 'Consumer 3',
+        children: [
+          { name: 'APP 3.1' },
+          { name: 'APP 3.2' }
+        ]
+      }
+    ]
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Consumer and API Dependency Tree</h1>
+      <CollapsibleTreeWithAction  />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
